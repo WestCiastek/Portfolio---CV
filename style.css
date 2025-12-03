@@ -4,7 +4,7 @@
 :root {
     --color-dark: #0A0A0A;      /* Prawie czarny */
     --color-medium: #1F1F1F;    /* Ciemny, głęboki szary */
-    --color-light: #f0f0f0;     /* Jasny biały/szary */
+    --color-light: #f2f2f2;     /* Jasny biały/szary */
     --color-accent: #00ff6e;    /* Energetyczny, neonowy zielony */
     --color-border: #444;       /* Kolor linii ramki */
     --border-radius-base: 8px;  /* Nowa zmienna dla zaokrąglenia rogów */
@@ -156,7 +156,7 @@ h2 {
 }
 
 .doswiadczenie-box {
-    height: 150px;
+    /* height: 150px; <--- USUNIĘTE, ABY ASPECT-RATIO MOGŁO DZIAŁAĆ POPRAWNIE Z SZEROKOŚCIĄ Z GRID */
     background-color: var(--color-medium);
     border: 2px solid var(--color-accent);
     border-radius: var(--border-radius-base); /* Zaokrąglone rogi */
@@ -165,7 +165,17 @@ h2 {
     align-items: center;
     font-size: 1.2em;
     color: var(--color-accent);
-    text-transform: uppercase;
+    
+    /* DODANO, ABY GWARANTOWAĆ KWADRATOWY KSZTAŁT */
+    aspect-ratio: 1 / 1; 
+
+    padding: 15px; /* Dodaje wewnętrzny margines, aby logo nie dotykało ramki */
+    text-transform: none; /* Usuń to, bo jest tu teraz zdjęcie */ 
+}
+.doswiadczenie-logo {
+    max-width: 100%; /* Obrazek nie będzie szerszy niż kontener (100% z paddingiem) */
+    max-height: 100%; /* Obrazek nie będzie wyższy niż kontener */
+    object-fit: contain; /* KLUCZOWA WŁAŚCIWOŚĆ: skaluje obrazek tak, aby był widoczny w całości, zachowując proporcje, nawet jeśli jest mniejszy/większy od kontenera. */
 }
 
 .doswiadczenie-opis h3 {
@@ -375,6 +385,6 @@ h2 {
     }
     
     .doswiadczenie-box {
-        height: 100px;
+        /* height: 100px; <--- USUNIĘTE, BO ASPECT-RATIO GWARANTUJE KWADRATOWOŚĆ NA KAŻDYM EKRANIE */
     }
 }
