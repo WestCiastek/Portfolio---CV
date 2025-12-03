@@ -18,6 +18,7 @@ body {
     background-color: var(--color-dark);
     color: var(--color-light);
     margin: 0;
+    /* UKŁAD DLA KOMPUTERÓW */
     display: grid;
     grid-template-columns: 250px 1fr;
     height: 100vh;
@@ -297,4 +298,83 @@ h2 {
 }
 .tech-level.advanced {
     background-color: var(--color-accent); /* Zielony */
+}
+
+/* =======================================
+   RESPONSIVE DESIGN (MOBILNE URZĄDZENIA)
+   ======================================= */
+@media (max-width: 800px) {
+
+    /* Zmień główny layout z 2 kolumn na 1 kolumnę (układ wertykalny) */
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr; /* Nav na górze, content pod spodem */
+        height: auto; 
+        overflow-y: auto;
+    }
+
+    /* Zmiana sidebar (NAV) na poziomy pasek na górze */
+    .sidebar {
+        flex-direction: row; /* Elementy w rzędzie */
+        flex-wrap: wrap; /* Pozwól przyciskom zawinąć się */
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+        padding: 10px 10px;
+        position: sticky; /* Przyklej menu do góry */
+        top: 0;
+        z-index: 100;
+        justify-content: center; /* Wyśrodkuj elementy na górze */
+    }
+
+    /* Zmniejsz logo na mobilnym */
+    .logo {
+        width: 40px;
+        height: 40px;
+        font-size: 0.8em;
+        margin-bottom: 5px;
+        margin-right: 10px;
+        order: -1; /* Przenieś logo na początek paska */
+    }
+
+    /* Ustaw przyciski obok siebie i zmniejsz padding */
+    .nav-button {
+        width: auto;
+        padding: 8px;
+        margin-bottom: 5px;
+        margin-right: 5px;
+        font-size: 0.8em;
+        text-align: center;
+    }
+    
+    /* Poprawka dla głównego obszaru treści */
+    .content-area {
+        margin: 10px;
+        padding: 20px 15px; /* Mniejszy padding */
+        border: none;
+    }
+
+    /* Zmniejszenie siatek na mobilnym */
+    .projekty-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 kolumna dla projektów */
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 kafelki w rzędzie technologii */
+    }
+    
+    /* Poprawki dla sekcji O MNIE */
+    .omnie-text-box {
+        width: 100%;
+        padding: 20px;
+    }
+    
+    /* Poprawki dla Doświadczenia/Kursów */
+    .doswiadczenie-item {
+        grid-template-columns: 1fr; /* Zmień układ z bocznego na jeden pod drugim */
+        gap: 10px;
+    }
+    
+    .doswiadczenie-box {
+        height: 100px;
+    }
 }
