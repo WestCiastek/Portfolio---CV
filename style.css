@@ -22,7 +22,9 @@ body {
     display: grid;
     grid-template-columns: 250px 1fr;
     height: 100vh;
-    overflow: hidden;
+    /* 🔥 ZMIANA 1: Zezwala na przewijanie w pionie (auto) i blokuje w poziomie (hidden) */
+    overflow-x: hidden; 
+    overflow-y: auto;
 }
 
 h2 {
@@ -321,6 +323,8 @@ h2 {
         grid-template-rows: auto 1fr; /* Nav na górze, content pod spodem */
         height: auto; 
         overflow-y: auto;
+        /* 🔥 ZMIANA 2: Dodatkowe zabezpieczenie, aby zablokować przewijanie w poziomie na mobilnym */
+        overflow-x: hidden;
     }
 
     /* Zmiana sidebar (NAV) na poziomy pasek na górze */
@@ -370,6 +374,16 @@ h2 {
 
     .tech-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 kafelki w rzędzie technologii */
+    }
+    
+    /* 🔥 ZMIANA 3: Zmniejszenie paddingu kafelka, aby zaoszczędzić miejsce wewnątrz siatki */
+    .tech-kafel {
+        padding: 10px;
+    }
+    
+    /* 🔥 ZMIANA 4: Zmniejszenie ikon, aby kafelki się nie rozszerzały nadmiernie */
+    .tech-icon {
+        font-size: 1.5em; /* Zmniejszenie z 2em do 1.5em */
     }
     
     /* Poprawki dla sekcji O MNIE */
