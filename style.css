@@ -320,4 +320,96 @@ h2 {
 .tech-level.beginner {
     background-color: #ff9800; /* Pomarańczowy */
 }
-.tech
+.tech-level.intermediate {
+    background-color: #f0f0f0; /* Jasny szary */
+    color: var(--color-dark);
+}
+.tech-level.advanced {
+    background-color: var(--color-accent); /* Zielony */
+}
+
+/* =======================================
+   RESPONSIVE DESIGN (MOBILNE URZĄDZENIA)
+   ======================================= */
+@media (max-width: 800px) {
+
+    /* Zmiana głównego layoutu na mobilny */
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr; /* Menu na górze, reszta pod nim */
+        height: auto; 
+        overflow-y: auto; 
+        /* ✅ ZMIANA 1: Zablokowanie przewijania w poziomie na mobilnym */
+        overflow-x: hidden;
+    }
+
+    /* Zmiana sidebar (NAV) na poziomy pasek na górze */
+    .sidebar {
+        flex-direction: row; /* Elementy w rzędzie */
+        flex-wrap: wrap; /* Zwijanie, jeśli za dużo miejsca */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6); 
+        padding: 10px 10px;
+        position: sticky; /* Przyklej menu do góry */
+        top: 0;
+        z-index: 100;
+        justify-content: center; /* Wyśrodkuj elementy na górze */
+    }
+
+    /* Zmniejsz logo na mobilnym */
+    .logo {
+        width: 40px;
+        height: 40px;
+        font-size: 0.8em;
+        margin-bottom: 5px;
+        margin-right: 10px;
+        order: -1; /* Przenieś logo na początek paska */
+    }
+
+    /* Ustaw przyciski obok siebie i zmniejsz padding */
+    .nav-button {
+        width: auto;
+        padding: 8px;
+        margin-bottom: 5px;
+        margin-right: 5px;
+        font-size: 0.8em;
+        text-align: center;
+    }
+    
+    /* Poprawka dla głównego obszaru treści */
+    .content-area {
+        margin: 10px;
+        padding: 20px 15px; /* Mniejszy padding */
+        border: none;
+    }
+
+    /* Zmniejszenie siatek na mobilnym */
+    .projekty-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 kolumna dla projektów */
+    }
+
+    /* ✅ ZMIANA 2 (Technologie): Mniejsze kafelki na telefonie */
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolumny dla technologii */
+        gap: 5px; /* Bardzo mały odstęp, by kafelki się zmieściły */
+    }
+    
+    .tech-kafel {
+        padding: 5px; /* Zmniejszony wewnętrzny margines kafelka */
+    }
+    
+    .tech-icon {
+        font-size: 1.2em; /* Mniejsze ikony, by zmniejszyć wysokość i szerokość kafelka */
+    }
+    
+    /* Poprawki dla sekcji O MNIE */
+    .omnie-text-box {
+        width: 100%;
+        padding: 20px;
+    }
+    
+    /* Poprawki dla Doświadczenia/Kursów */
+    .doswiadczenie-item {
+        grid-template-columns: 1fr; /* 1 kolumna */
+        gap: 10px;
+    }
+}
