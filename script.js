@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Upewnij się, że strona główna jest aktywna przy starcie (chociaż jest już w HTML)
+    // Upewnij się, że strona główna jest aktywna przy starcie
     const initialButton = document.querySelector('.nav-button[data-target="home"]');
     const initialSection = document.getElementById('home');
     if (initialButton && initialSection) {
