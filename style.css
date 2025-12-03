@@ -317,4 +317,98 @@ h2 {
 .tech-level.beginner {
     background-color: #ff9800; 
 }
-.tech-level.
+.tech-level.intermediate {
+    background-color: #f0f0f0; 
+    color: var(--color-dark);
+}
+.tech-level.advanced {
+    background-color: var(--color-accent); 
+}
+
+/* =======================================
+   RESPONSIVE DESIGN (MOBILNE URZĄDZENIA)
+   ======================================= */
+@media (max-width: 800px) {
+
+    /* Zmiana głównego layoutu na mobilny */
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr; 
+        height: auto; 
+        overflow-y: auto;
+        /* ✅ KLUCZOWE: Upewnienie się, że przewijanie poziome jest zablokowane */
+        overflow-x: hidden;
+    }
+
+    /* Zmiana sidebar (NAV) na poziomy pasek na górze */
+    .sidebar {
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6); 
+        padding: 10px 10px;
+        position: sticky; 
+        top: 0;
+        z-index: 100;
+        justify-content: center; 
+    }
+
+    /* Zmniejsz logo na mobilnym */
+    .logo {
+        width: 40px;
+        height: 40px;
+        font-size: 0.8em;
+        margin-bottom: 5px;
+        margin-right: 10px;
+        order: -1; 
+    }
+
+    /* Ustaw przyciski obok siebie i zmniejsz padding */
+    .nav-button {
+        width: auto;
+        padding: 8px;
+        margin-bottom: 5px;
+        margin-right: 5px;
+        font-size: 0.8em;
+        text-align: center;
+    }
+    
+    /* Poprawka dla głównego obszaru treści */
+    .content-area {
+        margin: 10px;
+        padding: 20px 15px; 
+        border: none;
+    }
+
+    /* Zmniejszenie siatek na mobilnym */
+    .projekty-grid {
+        grid-template-columns: repeat(1, 1fr); 
+    }
+
+    /* 🔥 ZMIANA 4: Zmniejszenie odstępu między kafelkami */
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 5px; /* Mniejszy odstęp (z 10px) */
+    }
+    
+    /* 🔥 ZMIANA 5: Zmniejszenie wewnętrznego marginesu (bloku) */
+    .tech-kafel {
+        padding: 5px; /* Mniejszy padding (z 10px) */
+    }
+    
+    /* 🔥 ZMIANA 6: Zmniejszenie ikon, aby zmieściły się w mniejszych kafelkach */
+    .tech-icon {
+        font-size: 1.2em; /* Mniejszy rozmiar (z 1.5em) */
+    }
+    
+    /* Poprawki dla sekcji O MNIE */
+    .omnie-text-box {
+        width: 100%;
+        padding: 20px;
+    }
+    
+    /* Poprawki dla Doświadczenia/Kursów */
+    .doswiadczenie-item {
+        grid-template-columns: 1fr; 
+        gap: 10px;
+    }
+}
