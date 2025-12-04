@@ -1,15 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Pobierz wszystkie przyciski nawigacyjne
-    const buttons = document.querySelectorAll('.nav-button');
-    // Pobierz wszystkie sekcje treści
+    const navControls = document.querySelectorAll('.nav-button, .logo');
     const sections = document.querySelectorAll('.content-section');
+    const buttons = document.querySelectorAll('.nav-button');
 
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Odczytaj ID sekcji docelowej z atrybutu data-target
-            const targetId = button.getAttribute('data-target');
+    navControls.forEach(control => {
+        control.addEventListener('click', () => {
+            const targetId = control.getAttribute('data-target');
 
-            // 1. Ukryj wszystkie sekcje i usuń klasę 'active' z przycisków
             sections.forEach(section => {
                 section.classList.remove('active');
             });
@@ -17,20 +14,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.classList.remove('active');
             });
 
-            // 2. Pokaż docelową sekcję i ustaw przycisk jako aktywny
             const targetSection = document.getElementById(targetId);
             if (targetSection) {
                 targetSection.classList.add('active');
             }
-            button.classList.add('active');
+            
+            if (control.classList.contains('nav-button')) {
+                control.classList.add('active');
+            }
         });
     });
 
-    // Upewnij się, że strona główna jest aktywna przy starcie
-    const initialButton = document.querySelector('.nav-button[data-target="home"]');
     const initialSection = document.getElementById('home');
-    if (initialButton && initialSection) {
-        initialButton.classList.add('active');
+    if (initialSection) {
         initialSection.classList.add('active');
     }
 });
