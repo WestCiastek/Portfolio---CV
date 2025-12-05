@@ -240,6 +240,17 @@ h2 {
     margin-top: 20px;
 }
 
+/* =======================================
+   STYL SEKCJI: STAN TECHNOLOGICZNY (Kafelki Umiejętności)
+   ======================================= */
+.tech-grid {
+    display: grid;
+    /* ZMIANA NA 6 KOLUMN, ABY BYŁY MNIEJSZE */
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 15px; 
+    margin-top: 20px;
+}
+
 .tech-kafel {
     background-color: var(--color-medium);
     border: 2px solid var(--color-accent);
@@ -251,7 +262,7 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 1; /* Utrzymanie kwadratowego kształtu */
 }
 
 .tech-kafel:hover {
@@ -269,6 +280,25 @@ h2 {
     margin: 0 0 5px 0;
     font-weight: bold;
     color: var(--color-light);
+}
+
+/* NOWE STYLE DLA GWIAZDEK */
+.tech-stars {
+    font-size: 1.1em;
+    margin-top: 5px;
+    /* Upewnia się, że gwiazdki są obok siebie */
+    line-height: 1; 
+    white-space: nowrap;
+}
+
+/* Kolor wypełnionej gwiazdki (fas) */
+.tech-stars .fas.fa-star {
+    color: var(--color-accent); 
+}
+
+/* Kolor pustej gwiazdki (far) */
+.tech-stars .far.fa-star {
+    color: #444; 
 }
 
 
@@ -364,5 +394,6 @@ h2 {
         gap: 10px;
     }
 }
+
 
 
