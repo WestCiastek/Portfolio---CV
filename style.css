@@ -279,14 +279,26 @@ h2 {
     color: var(--color-dark);
 }
 
-.tech-level.beginner {
-    background-color: #ff9800;
+/* Dodatkowe style dla GWIAZDEK (nowy format) */
+.tech-stars {
+    color: gold; /* Domyślny kolor dla wszystkich gwiazdek */
+    font-size: 1.1em;
+    margin-top: 5px;
 }
-.tech-level.intermediate {
-    background-color: #2196f3;
+
+/* Kolor wypełnionej gwiazdki */
+.tech-stars .fas.fa-star {
+    color: var(--color-accent); /* Użyj neonowego zielonego koloru akcentu */
 }
-.tech-level.advanced {
-    background-color: var(--color-accent);
+
+/* Kolor pustej gwiazdki */
+.tech-stars .far.fa-star {
+    color: #444; /* Ciemniejszy szary kolor dla pustych gwiazdek */
+}
+
+/* Usuwamy stare style poziomów, ponieważ używamy teraz gwiazdek */
+.tech-level {
+    display: none; /* Ukryj stare etykiety tekstowe */
 }
 
 @media (max-width: 800px) {
@@ -362,3 +374,4 @@ h2 {
         gap: 10px;
     }
 }
+
