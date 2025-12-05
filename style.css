@@ -152,9 +152,7 @@ h2 {
     align-items: center;
     font-size: 1.2em;
     color: var(--color-accent);
-    
     aspect-ratio: 1 / 1; 
-
     padding: 15px;
     text-transform: none;
 }
@@ -233,19 +231,9 @@ h2 {
     transform: scale(1.2);
 }
 
-.tech-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-top: 20px;
-}
 
-/* =======================================
-   STYL SEKCJI: STAN TECHNOLOGICZNY (Kafelki Umiejętności)
-   ======================================= */
 .tech-grid {
     display: grid;
-    /* ZMIANA NA 6 KOLUMN, ABY BYŁY MNIEJSZE */
     grid-template-columns: repeat(6, 1fr); 
     gap: 15px; 
     margin-top: 20px;
@@ -257,17 +245,17 @@ h2 {
     border-radius: var(--border-radius-base);
     padding: 20px;
     text-align: center;
-    transition: background-color 0.3s, border-color 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    aspect-ratio: 1 / 1; /* Utrzymanie kwadratowego kształtu */
+    aspect-ratio: 1 / 1; 
 }
 
 .tech-kafel:hover {
-    background-color: #1a1a1a;
-    border-color: var(--color-light);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 255, 110, 0.4);
 }
 
 .tech-icon {
@@ -282,43 +270,23 @@ h2 {
     color: var(--color-light);
 }
 
-/* NOWE STYLE DLA GWIAZDEK */
-.tech-stars {
-    font-size: 1.1em;
-    margin-top: 5px;
-    /* Upewnia się, że gwiazdki są obok siebie */
-    line-height: 1; 
-    white-space: nowrap;
+.tech-level {
+    font-size: 0.8em;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+    color: var(--color-dark);
+    display: block; 
 }
 
-/* Kolor wypełnionej gwiazdki (fas) */
-.tech-stars .fas.fa-star {
-    color: var(--color-accent); 
+.tech-level.beginner {
+    background-color: #ff9800; 
 }
-
-/* Kolor pustej gwiazdki (far) */
-.tech-stars .far.fa-star {
-    color: #444; 
+.tech-level.intermediate {
+    background-color: #2196f3; 
 }
-
-
-/* Nowe style dla GWIAZDEK */
-.tech-stars {
-    font-size: 1.1em;
-    margin-top: 5px;
-    /* Styl dla każdej gwiazdki, aby były obok siebie bez spacji */
-    line-height: 1; 
-    white-space: nowrap;
-}
-
-/* Kolor wypełnionej gwiazdki (fas) - zielony akcent */
-.tech-stars .fas.fa-star {
-    color: var(--color-accent); 
-}
-
-/* Kolor pustej gwiazdki (far) - ciemnoszary */
-.tech-stars .far.fa-star {
-    color: #444; 
+.tech-level.advanced {
+    background-color: var(--color-accent); 
 }
 
 @media (max-width: 800px) {
@@ -372,7 +340,7 @@ h2 {
     }
 
     .tech-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr); 
         gap: 10px; 
     }
     
@@ -381,7 +349,7 @@ h2 {
     }
     
     .tech-icon {
-        font-size: 1.5em;
+        font-size: 1.5em; 
     }
     
     .omnie-text-box {
@@ -394,6 +362,3 @@ h2 {
         gap: 10px;
     }
 }
-
-
-
