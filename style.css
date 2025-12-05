@@ -271,34 +271,24 @@ h2 {
     color: var(--color-light);
 }
 
-.tech-level {
-    font-size: 0.8em;
-    padding: 3px 8px;
-    border-radius: 3px;
-    font-weight: bold;
-    color: var(--color-dark);
-}
 
-/* Dodatkowe style dla GWIAZDEK (nowy format) */
+/* Nowe style dla GWIAZDEK */
 .tech-stars {
-    color: gold; /* Domyślny kolor dla wszystkich gwiazdek */
     font-size: 1.1em;
     margin-top: 5px;
+    /* Styl dla każdej gwiazdki, aby były obok siebie bez spacji */
+    line-height: 1; 
+    white-space: nowrap;
 }
 
-/* Kolor wypełnionej gwiazdki */
+/* Kolor wypełnionej gwiazdki (fas) - zielony akcent */
 .tech-stars .fas.fa-star {
-    color: var(--color-accent); /* Użyj neonowego zielonego koloru akcentu */
+    color: var(--color-accent); 
 }
 
-/* Kolor pustej gwiazdki */
+/* Kolor pustej gwiazdki (far) - ciemnoszary */
 .tech-stars .far.fa-star {
-    color: #444; /* Ciemniejszy szary kolor dla pustych gwiazdek */
-}
-
-/* Usuwamy stare style poziomów, ponieważ używamy teraz gwiazdek */
-.tech-level {
-    display: none; /* Ukryj stare etykiety tekstowe */
+    color: #444; 
 }
 
 @media (max-width: 800px) {
@@ -374,4 +364,5 @@ h2 {
         gap: 10px;
     }
 }
+
 
